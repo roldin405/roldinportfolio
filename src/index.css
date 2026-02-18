@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  --accentColor: #c2a4ff;
+  --accentColorDim: rgba(194, 164, 255, 0.15);
+  --backgroundColor: #0b080c;
+  --surfaceColor: #13101a;
+  --surfaceColorLight: #1a1525;
+  --textPrimary: #eae5ec;
+  --textSecondary: #a09aa8;
+  --borderColor: rgba(194, 164, 255, 0.12);
+  --glassBackground: rgba(19, 16, 26, 0.6);
+  --glassBorder: rgba(194, 164, 255, 0.08);
+
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  color: var(--textPrimary);
+  background-color: var(--backgroundColor);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accentColor);
+}
+
+::selection {
+  background: var(--accentColor);
+  color: var(--backgroundColor);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--backgroundColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accentColor);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4bbff;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-container {
+    padding: 0 64px;
+  }
+}

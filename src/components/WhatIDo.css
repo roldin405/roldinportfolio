@@ -1,0 +1,141 @@
+.expertise {
+    padding: 120px 0;
+    position: relative;
+}
+
+.expertise-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accentColor);
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--borderColor);
+    background: var(--accentColorDim);
+}
+
+.section-title {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.section-description {
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--textSecondary);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+.expertise-card {
+    position: relative;
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.expertise-card:hover {
+    border-color: rgba(194, 164, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.expertise-card-glow {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 200px;
+    height: 200px;
+    filter: blur(80px);
+    opacity: 0.1;
+    border-radius: 50%;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.expertise-card:hover .expertise-card-glow {
+    opacity: 0.2;
+}
+
+.expertise-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.expertise-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.expertise-card-desc {
+    color: var(--textSecondary);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.expertise-card-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.expertise-tool-tag {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--surfaceColorLight);
+    border: 1px solid var(--glassBorder);
+    font-size: 12px;
+    color: var(--textSecondary);
+    letter-spacing: 0.3px;
+    transition: all 0.3s;
+}
+
+.expertise-tool-tag:hover {
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+    background: var(--accentColorDim);
+}
+
+@media (max-width: 768px) {
+    .expertise {
+        padding: 80px 0;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-card {
+        padding: 28px;
+    }
+}

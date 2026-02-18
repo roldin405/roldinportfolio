@@ -1,0 +1,128 @@
+.career {
+    padding: 120px 0;
+    position: relative;
+    background: linear-gradient(180deg, transparent 0%, rgba(194, 164, 255, 0.02) 50%, transparent 100%);
+}
+
+.career-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.career-timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.career-timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accentColor), var(--borderColor), transparent);
+}
+
+.career-item {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 48px;
+}
+
+.career-item:last-child {
+    padding-bottom: 0;
+}
+
+.career-item-dot {
+    position: absolute;
+    left: 13px;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--surfaceColor);
+    border: 2px solid var(--borderColor);
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+.career-item-current .career-item-dot {
+    border-color: var(--accentColor);
+    background: var(--accentColor);
+}
+
+.career-dot-pulse {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--accentColor);
+    animation: dotPulse 2s ease infinite;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.career-item:hover .career-item-dot {
+    border-color: var(--accentColor);
+    box-shadow: 0 0 20px rgba(194, 164, 255, 0.3);
+}
+
+.career-item-content {
+    background: var(--surfaceColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s;
+}
+
+.career-item:hover .career-item-content {
+    border-color: rgba(194, 164, 255, 0.2);
+    transform: translateX(4px);
+}
+
+.career-item-year {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accentColor);
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: var(--accentColorDim);
+    margin-bottom: 12px;
+}
+
+.career-item-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.career-item-desc {
+    color: var(--textSecondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .career {
+        padding: 80px 0;
+    }
+
+    .career-item-content {
+        padding: 20px;
+    }
+}

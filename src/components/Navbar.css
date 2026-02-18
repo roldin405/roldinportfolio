@@ -1,0 +1,170 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-scrolled {
+    background: var(--glassBackground);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glassBorder);
+    padding: 14px 0;
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: opacity 0.3s;
+}
+
+.navbar-brand:hover {
+    color: var(--textPrimary);
+    opacity: 0.8;
+}
+
+.navbar-brand-accent {
+    color: var(--accentColor);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbar-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--textSecondary);
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accentColor);
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: var(--accentColor);
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-github {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--borderColor);
+    transition: all 0.3s;
+}
+
+.navbar-github:hover {
+    border-color: var(--accentColor);
+    background: var(--accentColorDim);
+}
+
+.navbar-github::after {
+    display: none;
+}
+
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 100;
+}
+
+.navbar-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--textPrimary);
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.navbar-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    .navbar-links {
+        position: fixed;
+        inset: 0;
+        background: var(--backgroundColor);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+    }
+
+    .navbar-links-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-link {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-inner {
+        padding: 0 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-inner {
+        padding: 0 64px;
+    }
+}
