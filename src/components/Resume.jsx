@@ -65,7 +65,7 @@ export default function Resume() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                    <a href="/resume.pdf" download className="resume-download-btn">
+                    <a href="/Resume.pdf" download className="resume-download-btn">
                         <FiDownload size={18} />
                         Download Full Resume
                     </a>
